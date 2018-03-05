@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Test.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Test"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <local:PageUserControl>
+        <local:PageUserControl.DataContext>
+            <local:ViewModel />
+        </local:PageUserControl.DataContext>
+        <local:PageUserControl.Main>
+
+            <StackPanel Orientation="Vertical">
+                <TextBox Text="{Binding Quantity,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                </TextBox>
+                <TextBox Name="TextTwo" Text="{Binding Stock,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   HorizontalAlignment="Center" />
+            </StackPanel>
+        </local:PageUserControl.Main>
+    </local:PageUserControl>
+</Page>
